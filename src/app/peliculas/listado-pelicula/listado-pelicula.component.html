@@ -1,0 +1,16 @@
+<!--pipes idem a c | y condiciones-->
+<!--ng for and ng if-->
+<div *ngIf = "!peliculas">
+    <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"/>
+</div>
+<div *ngIf = "peliculas && peliculas?.length === 0">
+    <p>No hay pelis</p>
+</div>
+<div *ngIf = "peliculas && peliculas?.length > 0">
+<div *ngFor = "let pelicula of peliculas; let index = index"
+    class="pelicula-contenedor">
+    <div>Pelicula {{index}}: {{pelicula.titulo}}</div>
+    <div>{{pelicula.fechaLanzamiento | date:"dd-mm-yyyy" | uppercase}}</div>
+    <div>{{pelicula.precio | currency}} </div>
+</div>
+</div>
