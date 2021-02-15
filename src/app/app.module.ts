@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoPeliculaComponent } from './peliculas/listado-pelicula/listado-pelicula.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './material/material.module';
+import { MenuComponent } from './menu/menu.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoPeliculaComponent,
-    ListadoGenericoComponent
+    ListadoGenericoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

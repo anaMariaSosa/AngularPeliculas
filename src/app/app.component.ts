@@ -23,6 +23,42 @@ export class AppComponent implements OnInit{
         titulo: 'moana',
         fechaLanzamiento: new Date('2016-11-14'),
         precio: 300.99
+      },
+      {
+        titulo: 'spider man',
+        fechaLanzamiento: new Date(),
+        precio: 1400.99
+      },{
+        titulo: 'moana',
+        fechaLanzamiento: new Date('2016-11-14'),
+        precio: 300.99
+      },
+      {
+        titulo: 'spider man',
+        fechaLanzamiento: new Date(),
+        precio: 1400.99
+      },{
+        titulo: 'moana',
+        fechaLanzamiento: new Date('2016-11-14'),
+        precio: 300.99
+      },
+      {
+        titulo: 'spider man',
+        fechaLanzamiento: new Date(),
+        precio: 1400.99
+      },{
+        titulo: 'moana',
+        fechaLanzamiento: new Date('2016-11-14'),
+        precio: 300.99
+      },
+      {
+        titulo: 'spider man',
+        fechaLanzamiento: new Date(),
+        precio: 1400.99
+      },{
+        titulo: 'moana',
+        fechaLanzamiento: new Date('2016-11-14'),
+        precio: 300.99
       }]
     }, 3000);
     setTimeout(() => {
