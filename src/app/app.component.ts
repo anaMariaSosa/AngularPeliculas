@@ -24,17 +24,9 @@ export class AppComponent implements OnInit{
         fechaLanzamiento: new Date('2016-11-14'),
         precio: 300.99
       }]
-    }, 1000);
+    }, 3000);
     setTimeout(() => {
-      this.peliculasFuturo = [{
-        titulo: 'sirenita',
-        fechaLanzamiento: new Date(),
-        precio: 1500.99
-      },{
-        titulo: 'mickey',
-        fechaLanzamiento: new Date('2019-11-16'),
-        precio: 700.99
-      }]
+      this.peliculasFuturo = []
     }, 1000);
   }
   
