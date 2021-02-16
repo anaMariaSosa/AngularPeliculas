@@ -2,7 +2,7 @@
 <div class="contenedor">
     <!--<p>Hola Mundo</p> -->
     <!--interpolacion:parametrizacion-->
-    <div>
+    <!--<div>
         {{title}}
     </div> 
 
@@ -11,8 +11,12 @@
 
     <p>prox pelis</p>
     <app-listado-pelicula [peliculas]="peliculasFuturo"></app-listado-pelicula>
+-->
 
     <!--<input type="file" style="display:none" #cargador>
     <button (click)="cargador.click()">Cargar Archivo</button>
     -->
+    <app-rating></app-rating>
+    <p>y ahora</p>
+    <app-rating [maximoRating]=10></app-rating>
 </div>
