@@ -16,7 +16,8 @@
     <!--<input type="file" style="display:none" #cargador>
     <button (click)="cargador.click()">Cargar Archivo</button>
     -->
-    <app-rating></app-rating>
-    <p>y ahora</p>
+    <app-rating (rated)="manejarRated($event)"></app-rating>
+    <!--<p>y ahora</p>
     <app-rating [maximoRating]=10></app-rating>
+    -->
 </div>
