@@ -1,16 +1,28 @@
 <!--pipes idem a c | y condiciones-->
 <!--ng for and ng if-->
 <app-listado-generico [listado]="peliculas">
-    <ng-container vacio>
+    <!--<ng-container vacio>
         <div>holaaaa <b>vacio</b></div>
-    </ng-container>
+    </ng-container>-->
     <ng-container contenido>
-        <div *ngFor = "let pelicula of peliculas; let index = index"
-            class="pelicula-contenedor">
-            <div>Pelicula {{index}}: {{pelicula.titulo}}
-                <button style="margin-left: 1rem;" (click)="delete(index)">Remove</button></div>
-            <div>{{pelicula.fechaLanzamiento | date:"dd-mm-yyyy" | uppercase}}</div>
-            <div>{{pelicula.precio | currency}} </div>
+        <div class="peliculas-contenedor">
+            <div *ngFor = "let pelicula of peliculas; let index = index"
+                class="pelicula-contenedor">
+                <!--<div>Pelicula {{index}}: {{pelicula.titulo}}
+                    <button style="margin-left: 1rem;" (click)="delete(index)">Remove</button></div>
+                <div>{{pelicula.fechaLanzamiento | date:"dd-mm-yyyy" | uppercase}}</div>
+                <div>{{pelicula.precio | currency}} </div>-->
+                <a>
+                    <img [src]="pelicula.poster" alt="Poster" />
+                </a>
+                <p>
+                    <a>{{pelicula.titulo}}</a>
+                </p>
+                <div>
+                    <a mat-flat-button color="primary">Edit</a>
+                    <button mat-flat-button color="warn" type="button">Delete</button>
+                </div>
+            </div>
         </div>
     </ng-container>
 </app-listado-generico>
