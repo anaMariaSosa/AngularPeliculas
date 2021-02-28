@@ -1,18 +1,22 @@
+import { generoDTO } from './../genero';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-genero',
   templateUrl: './editar-genero.component.html',
   styleUrls: ['./editar-genero.component.css']
 })
-export class EditarGeneroComponent implements OnInit {
+export class EditarGeneroComponent {
 
-  constructor(private activeRoute: ActivatedRoute) { }
+  constructor(private router:Router) { }
 
-  ngOnInit(): void {
-    //nos subcribimos al metodoporque esto e sun observable
-    this.activeRoute.params.subscribe(params =>{alert(params.id)});
+  model:generoDTO = {nombre:'Drama'};
+
+  saveGender(gender: generoDTO):void{
+    //llamar a servicio de guardar
+    console.log(gender);
+    this.router.navigate(['/generos']);
   }
 
 }

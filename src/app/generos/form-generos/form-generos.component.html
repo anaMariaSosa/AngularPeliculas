@@ -1,0 +1,12 @@
+<form (submit)="saveGender()" [formGroup]="form">
+    <mat-form-field appearance = "outline">
+        <mat-label>Nombre*</mat-label>
+        <input formControlName = "nombre" matInput />
+        <mat-error *ngIf="form.invalid">{{obtainNameError()}}</mat-error>
+    </mat-form-field>
+    <br/> <br/>
+    <div>
+        <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
+        <a mat-stroked-button routerLink='/generos'>Cancel</a>
+    </div>
+</form>
