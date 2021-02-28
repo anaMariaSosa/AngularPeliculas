@@ -15,7 +15,7 @@ export class FormGenerosComponent implements OnInit {
   model!: generoDTO;
 
   @Output()
-  submit: EventEmitter<generoDTO> = new EventEmitter<generoDTO>();
+  submitir: EventEmitter<generoDTO> = new EventEmitter<generoDTO>();
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -32,13 +32,13 @@ export class FormGenerosComponent implements OnInit {
         },
       ],
     });
-    if(this.model !== undefined)
+    if (this.model !== undefined)
     {
       this.form.patchValue(this.model);
     }
   }
 
-  obtainNameError() {
+  obtainNameError(): string {
     const field = this.form.get('nombre');
     if (field != null && field.hasError('required')) {
       return 'Mandatory field. Please complete before save';
@@ -52,7 +52,7 @@ export class FormGenerosComponent implements OnInit {
     return '';
   }
 
-  saveGender(){
-   this.submit.emit(this.form.value);
+  saveGender(): void{
+   this.submitir.emit(this.form.value);
   }
 }

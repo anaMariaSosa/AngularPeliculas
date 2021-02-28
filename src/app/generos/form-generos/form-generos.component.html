@@ -4,7 +4,6 @@
         <input formControlName = "nombre" matInput />
         <mat-error *ngIf="form.invalid">{{obtainNameError()}}</mat-error>
     </mat-form-field>
-    <br/> <br/>
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
         <a mat-stroked-button routerLink='/generos'>Cancel</a>

@@ -1,3 +1,4 @@
+import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearActorComponent } from './actores/crear-actor/crear-actor.component';
@@ -12,9 +13,10 @@ import { IndiceGenerosComponent } from './generos/indice-generos/indice-generos.
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CrearPeliculaComponent } from './peliculas/crear-pelicula/crear-pelicula.component';
 import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
+import { ListadoPeliculaComponent } from './peliculas/listado-pelicula/listado-pelicula.component';
 
 const routes: Routes = [
-  {path: '',component:LandingPageComponent},
+  {path: '', component: LandingPageComponent},
   {path: 'generos', component: IndiceGenerosComponent},
   {path: 'generos/crear', component: CrearGeneroComponent},
   {path: 'generos/editar/:id', component: EditarGeneroComponent},
@@ -26,11 +28,12 @@ const routes: Routes = [
   {path: 'actores/editar/:id', component: EditarActorComponent},
   {path: 'peliculas/crear', component: CrearPeliculaComponent},
   {path: 'peliculas/editar/:id', component: EditarPeliculaComponent},
-  //de ultimo proque va en orden y la primera que casa aplica, esto a continuacion aplica a todas
-  //opcion 1: redirigir a home pero se mantiene la url incorrecta)
-  //{path: '**',component: LandingPageComponent}
-  //opcion 2: redirie al home pero actualiza la url
-  {path: '**',redirectTo:''}
+  {path: 'peliculas/buscar', component: FiltroPeliculasComponent},
+  // de ultimo proque va en orden y la primera que casa aplica, esto a continuacion aplica a todas
+  // opcion 1: redirigir a home pero se mantiene la url incorrecta)
+  // {path: '**',component: LandingPageComponent}
+  // opcion 2: redirie al home pero actualiza la url
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
