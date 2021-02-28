@@ -52,7 +52,7 @@ export class FormGenerosComponent implements OnInit {
     return '';
   }
 
-  saveGender(): void{
+  saveGender(): any {
    this.submitir.emit(this.form.value);
   }
 }

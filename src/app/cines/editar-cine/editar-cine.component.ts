@@ -11,7 +11,7 @@ export class EditarCineComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //nos subcribimos al metodoporque esto e sun observable
-    this.activeRoute.params.subscribe(params =>{alert(params.id)});
+    // nos subcribimos al metodoporque esto e sun observable
+    this.activeRoute.params.subscribe(params => {alert(params.id); });
   }
 }

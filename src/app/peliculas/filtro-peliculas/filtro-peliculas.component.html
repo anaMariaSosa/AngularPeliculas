@@ -7,9 +7,20 @@
     </mat-form-field>
     <mat-form-field appearance = "outline">
         <mat-label>Genero</mat-label>
-        <mat-select formControlName = "genero">
-            <mat-option [value]="'1'">Drama</mat-option>
-            <mat-option [value]="'2'">Comedia</mat-option>
+        <mat-select formControlName = "generoId">
+            <mat-option *ngFor="let genero of generos" [value]="genero.id">{{genero.nombre}}</mat-option>
         </mat-select>
     </mat-form-field>
+
+    <div>
+        <mat-checkbox formControlName = "proxEstrenos">prox estrenos</mat-checkbox>
+    </div>
+    <div>
+        <mat-checkbox formControlName = "enCines">en cines</mat-checkbox>
+    </div>
+    <div class="contenedor-limpiar">
+        <button mat-flat-button (click)="clean()" color="warn">Limpiar filtros</button>
+    </div>
 </form>
+
+<app-listado-pelicula [peliculas]="peliculas"></app-listado-pelicula>
