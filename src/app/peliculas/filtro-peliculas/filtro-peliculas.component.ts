@@ -1,5 +1,7 @@
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-filtro-peliculas',
@@ -28,15 +30,19 @@ export class FiltroPeliculasComponent implements OnInit {
     enCines: false
   };
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private location: Location, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(this.defaultValuesPelis);
+    this.readURLValues();
+    this.searchPelis(this.form.value);
 
     this.form.valueChanges
     .subscribe(valores => {
       this.peliculas = this.peliculasOriginal;
       this.searchPelis(valores);
+      this.searchAnaIncludeinURL();
       console.log(valores);
     });
   }
@@ -60,5 +66,48 @@ export class FiltroPeliculasComponent implements OnInit {
     // con esta opcion no recarga la lista de pelis inicial pero con patch si
     // this.form = this.formBuilder.group(this.defaultValuesPelis);
     this.form.patchValue(this.defaultValuesPelis);
+  }
+
+  private searchAnaIncludeinURL(): void{
+    const queryStrings: string[] = [];
+    const formValues = this.form.value;
+
+    if (formValues.titulo){
+      queryStrings.push(`titulo=${formValues.titulo}`);
+    }
+    if (formValues.generoId !== 0){
+      queryStrings.push(`generoId=${formValues.generoId}`);
+    }
+    if (formValues.proxEstrenos){
+      queryStrings.push(`proxEstrenos=${formValues.proxEstrenos}`);
+    }
+    if (formValues.enCines){
+      queryStrings.push(`enCines=${formValues.enCines}`);
+    }
+    this.location.replaceState('peliculas/buscar', queryStrings.join('&'));
+  }
+
+  private readURLValues(): void{
+    this.activatedRoute.queryParams.subscribe((params) => {
+      const urlObjects: any = {};
+      if (params.titulo)
+      {
+        urlObjects.titulo = params.titulo;
+      }
+      if (params.generoId)
+      {
+        urlObjects.generoId = Number(params.generoId);
+      }
+      if (params.proxEstrenos)
+      {
+        urlObjects.proxEstrenos = params.proxEstrenos;
+      }
+      if (params.enCines)
+      {
+        urlObjects.enCines = params.enCines;
+      }
+
+      this.form.patchValue(urlObjects);
+    });
   }
 }
