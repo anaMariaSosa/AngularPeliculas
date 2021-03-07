@@ -1,0 +1,17 @@
+<form (submit)="saveActor()" [formGroup]="form">
+    <mat-form-field appearance = "outline">
+        <mat-label>Nombre*</mat-label>
+        <input formControlName = "nombre" matInput />
+        <mat-error>Mandatory field. Please complete before save</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance = "outline">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input formControlName = "fechaNacimiento" matInput [matDatepicker]="picker"/>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]= "picker"></mat-datepicker-toggle>
+    </mat-form-field>
+    <div>
+        <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
+        <a mat-stroked-button routerLink='/actores'>Cancel</a>
+    </div>
+</form>
