@@ -10,6 +10,7 @@
         <mat-datepicker #picker></mat-datepicker>
         <mat-datepicker-toggle matSuffix [for]= "picker"></mat-datepicker-toggle>
     </mat-form-field>
+    <app-input-img [imageURL]="model?.foto" (selectFileImage)="selectBase64File($event)"></app-input-img>
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
         <a mat-stroked-button routerLink='/actores'>Cancel</a>
