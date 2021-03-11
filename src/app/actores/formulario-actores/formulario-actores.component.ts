@@ -22,9 +22,9 @@ export class FormularioActoresComponent implements OnInit {
   ngOnInit(): void {
     // esto es para inicializar el form en crear
     this.form = this.formBuilder.group({
-      nombre: [ '', {validators: [Validators.required]}],
+      nombre: ['', {validators: [Validators.required]}],
       fechaNacimiento: '',
-      foto: '',
+      foto:'',
       biografia: ''
     });
     // esto es para el inut en la edicion
@@ -40,11 +40,10 @@ export class FormularioActoresComponent implements OnInit {
 
   selectBase64File(file){
     this.form.get('foto')?.setValue(file);
-    console.log('que tall');
+    console.log("que tall");
   }
 
   changeMarkDown(event:any){
     this.form.get('biografia')?.setValue(event.target.value.toString());
   }
-
 }

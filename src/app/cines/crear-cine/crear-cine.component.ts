@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { cineDTO } from './../cine';
+import { FormGroup } from '@angular/forms';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-crear-cine',
@@ -10,6 +12,10 @@ export class CrearCineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  saveMovies(event:cineDTO){
+    console.log(event);
   }
 
 }
