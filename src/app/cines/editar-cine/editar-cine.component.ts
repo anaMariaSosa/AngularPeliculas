@@ -10,7 +10,7 @@ import { cineDTO } from '../cine';
 })
 export class EditarCineComponent implements OnInit {
 
-  model:cineReadDTO = {nombre:"Cuchura"};
+  model: cineReadDTO = {nombre: 'Cuchura', latitud: 40.39551245721832, longitud: -3.6785656210622624};
 
   constructor(private activeRoute: ActivatedRoute) { }
 

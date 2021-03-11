@@ -5,6 +5,13 @@
         <mat-error *ngIf="form.invalid">name is mandatory</mat-error>
     </mat-form-field>
 
+    <h4>Select the cinema in the map</h4>
+    <div>
+        <app-mapa 
+            (selectedCoor) = "coordenadas($event)"
+            [coordenadasIniciales]="iniCoor"></app-mapa>
+    </div>
+
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
         <a mat-stroked-button routerLink='/cines'>Cancel</a>
