@@ -31,6 +31,12 @@
     [markdowncontent]="model.resumen"
     (changeText) = "setSummary($event)" [inicitalText]="'Summary'"></app-input-markdown>
 
+    <h4>Select Generos</h4>
+    
+    <app-selector-multiple 
+    [selected]="selectedGender"
+    [notSelected]="notSelectedGender"></app-selector-multiple>
+
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
         <a mat-stroked-button routerLink='/peliculas'>Cancel</a>

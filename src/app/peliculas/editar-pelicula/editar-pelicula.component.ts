@@ -16,7 +16,8 @@ export class EditarPeliculaComponent implements OnInit {
     enCines: false,
     fechaLanzamiento: new Date('12-05-2020'),
     trailer: 'bubu',
-    poster: 'http://cdn2.estamosrodando.com/biografias/16/10/james-franco-148396.jpg'
+    poster: 'http://cdn2.estamosrodando.com/biografias/16/10/james-franco-148396.jpg',
+    generosId: []
   };
 
   constructor(private activeRoute: ActivatedRoute) { }

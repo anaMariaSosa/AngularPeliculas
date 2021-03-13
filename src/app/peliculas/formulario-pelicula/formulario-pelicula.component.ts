@@ -1,6 +1,7 @@
 import { peliculaDTO } from './../pelicula';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { multipleSelectorDTO } from 'src/app/utilidades/selector-multiple/multipleSelector';
 
 @Component({
   selector: 'app-formulario-pelicula',
@@ -17,6 +18,13 @@ export class FormularioPeliculaComponent implements OnInit {
   @Output()
   onSaveMovie: EventEmitter<peliculaDTO> = new EventEmitter<peliculaDTO>();
 
+  notSelectedGender: multipleSelectorDTO[] = [
+          {key: 1, option: 'Drama'},
+          {key: 2, option: 'Aventura'},
+          {key: 3, option: 'Terror'}];
+
+  selectedGender: multipleSelectorDTO[] = [];
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -26,7 +34,8 @@ export class FormularioPeliculaComponent implements OnInit {
       enCines: false,
       trailer: '',
       fechaLanzamiento: '',
-      poster: ''
+      poster: '',
+      generosId: []
     });
     // esto es para el inut en la edicion
     if (this.model !== undefined)
@@ -37,6 +46,9 @@ export class FormularioPeliculaComponent implements OnInit {
 
   saveMovies(){
     this.onSaveMovie.emit(this.form.value);
+    const generosIds = this.selectedGender.map(val => val.key);
+    this.form.get('generosId')?.setValue(generosIds);
+    console.log(this.selectedGender);
   }
 
   selectPoster(event: File){
