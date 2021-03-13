@@ -13,7 +13,7 @@
 
     <app-input-img [imageURL]="model?.foto" (selectFileImage)="selectBase64File($event)"></app-input-img>
     
-    <app-input-markdown (changeText) = "changeMarkDown($event)"></app-input-markdown>
+    <app-input-markdown [inicitalText]="'Biografia'" (changeText) = "changeMarkDown($event)"></app-input-markdown>
     
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>

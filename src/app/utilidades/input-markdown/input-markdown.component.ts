@@ -1,5 +1,5 @@
 import { element } from 'protractor';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-markdown',
@@ -8,7 +8,11 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class InputMarkdownComponent implements OnInit {
 
+  @Input()
   markdowncontent = '';
+
+  @Input()
+  inicitalText = 'Text';
 
   @Output()
   changeText: EventEmitter<string> = new EventEmitter<string>();

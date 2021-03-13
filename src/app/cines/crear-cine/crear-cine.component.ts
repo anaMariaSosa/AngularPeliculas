@@ -14,7 +14,7 @@ export class CrearCineComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveMovies(event:cineDTO){
+  saveMovies(event: cineDTO){
     console.log(event);
   }
 
