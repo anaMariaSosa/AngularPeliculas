@@ -21,10 +21,4 @@ export class InputMarkdownComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  inputTextArea(event: any): void{
-    console.log(event.target.value.toString());
-    this.markdowncontent = event.target.value.toString();
-    this.changeText.emit(this.markdowncontent);
-  }
 }
