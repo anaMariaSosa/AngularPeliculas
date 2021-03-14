@@ -5,7 +5,6 @@ export interface peliculaDTO {
     fechaLanzamiento: Date;
     trailer: string;
     poster: string;
-    generosId: string[];
 }
 
 export interface peliculaReadDTO {
@@ -15,5 +14,4 @@ export interface peliculaReadDTO {
     fechaLanzamiento: Date;
     trailer: string;
     poster: string;
-    generosId: string[];
 }

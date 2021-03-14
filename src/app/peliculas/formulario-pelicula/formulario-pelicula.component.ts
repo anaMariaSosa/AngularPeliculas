@@ -35,7 +35,7 @@ export class FormularioPeliculaComponent implements OnInit {
       trailer: '',
       fechaLanzamiento: '',
       poster: '',
-      generosId: []
+      generosId: ''
     });
     // esto es para el inut en la edicion
     if (this.model !== undefined)
@@ -45,10 +45,11 @@ export class FormularioPeliculaComponent implements OnInit {
   }
 
   saveMovies(){
-    this.onSaveMovie.emit(this.form.value);
     const generosIds = this.selectedGender.map(val => val.key);
     this.form.get('generosId')?.setValue(generosIds);
     console.log(this.selectedGender);
+    console.log(generosIds);
+    this.onSaveMovie.emit(this.form.value);
   }
 
   selectPoster(event: File){
