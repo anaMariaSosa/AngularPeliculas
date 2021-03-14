@@ -37,6 +37,12 @@
     [selected]="selectedGender"
     [notSelected]="notSelectedGender"></app-selector-multiple>
 
+    <h4>Select Movies</h4>
+    
+    <app-selector-multiple 
+    [selected]="selectedMovie"
+    [notSelected]="notSelectedMovie"></app-selector-multiple>
+
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
         <a mat-stroked-button routerLink='/peliculas'>Cancel</a>

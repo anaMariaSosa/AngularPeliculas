@@ -25,6 +25,13 @@ export class FormularioPeliculaComponent implements OnInit {
 
   selectedGender: multipleSelectorDTO[] = [];
 
+  notSelectedMovie: multipleSelectorDTO[] = [
+    {key: 1, option: 'Kinepolis'},
+    {key: 2, option: 'Cinesa'},
+    {key: 3, option: 'Yelmo'}];
+
+selectedMovie: multipleSelectorDTO[] = [];
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -35,7 +42,8 @@ export class FormularioPeliculaComponent implements OnInit {
       trailer: '',
       fechaLanzamiento: '',
       poster: '',
-      generosId: ''
+      generosId: '',
+      cinesId: ''
     });
     // esto es para el inut en la edicion
     if (this.model !== undefined)
@@ -49,6 +57,10 @@ export class FormularioPeliculaComponent implements OnInit {
     this.form.get('generosId')?.setValue(generosIds);
     console.log(this.selectedGender);
     console.log(generosIds);
+    const cineIds = this.selectedMovie.map(val => val.key);
+    this.form.get('cinesId')?.setValue(cineIds);
+    console.log(this.selectedMovie);
+    console.log(cineIds);
     this.onSaveMovie.emit(this.form.value);
   }
 
