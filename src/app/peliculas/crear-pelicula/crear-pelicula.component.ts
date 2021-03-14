@@ -1,4 +1,4 @@
-import { peliculaDTO } from './../pelicula';
+import { peliculaDTO, peliculaReadDTO } from './../pelicula';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearPeliculaComponent implements OnInit {
 
+  model: peliculaReadDTO = {
+    titulo: '',
+    resumen: '',
+    enCines: false,
+    fechaLanzamiento: new Date(),
+    trailer: '',
+    poster: '',
+  };
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  saveNewMovie(event: peliculaDTO){
+  saveNewMovie(event: peliculaDTO): void{
     console.log(event);
   }
 }

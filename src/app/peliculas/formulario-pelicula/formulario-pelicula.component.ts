@@ -52,7 +52,7 @@ selectedMovie: multipleSelectorDTO[] = [];
     }
   }
 
-  saveMovies(){
+  saveMovies(): void{
     const generosIds = this.selectedGender.map(val => val.key);
     this.form.get('generosId')?.setValue(generosIds);
     console.log(this.selectedGender);
@@ -64,11 +64,11 @@ selectedMovie: multipleSelectorDTO[] = [];
     this.onSaveMovie.emit(this.form.value);
   }
 
-  selectPoster(event: File){
+  selectPoster(event: File): void{
     this.form.get('poster')?.setValue(event);
   }
 
-  setSummary(event: string){
+  setSummary(event: string): void{
     this.form.get('resumen')?.setValue(event);
   }
 
