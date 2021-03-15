@@ -55,12 +55,8 @@ selectedMovie: multipleSelectorDTO[] = [];
   saveMovies(): void{
     const generosIds = this.selectedGender.map(val => val.key);
     this.form.get('generosId')?.setValue(generosIds);
-    console.log(this.selectedGender);
-    console.log(generosIds);
     const cineIds = this.selectedMovie.map(val => val.key);
     this.form.get('cinesId')?.setValue(cineIds);
-    console.log(this.selectedMovie);
-    console.log(cineIds);
     this.onSaveMovie.emit(this.form.value);
   }
 

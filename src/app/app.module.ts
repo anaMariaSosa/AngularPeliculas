@@ -37,6 +37,7 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
 import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 import { MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { MatAutocompleteModule} from '@angular/material/autocomplete';
     MapaComponent,
     FormularioPeliculaComponent,
     SelectorMultipleComponent,
-    AutocompleteActoresComponent
+    AutocompleteActoresComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +78,8 @@ import { MatAutocompleteModule} from '@angular/material/autocomplete';
     FormsModule,
     LeafletModule,
     MarkdownModule.forRoot(),
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
