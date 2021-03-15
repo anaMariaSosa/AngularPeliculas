@@ -38,6 +38,7 @@ import { SelectorMultipleComponent } from './utilidades/selector-multiple/select
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { MatTableModule } from '@angular/material/table';
     LeafletModule,
     MarkdownModule.forRoot(),
     MatAutocompleteModule,
-    MatTableModule
+    MatTableModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatTable } from '@angular/material/table';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-autocomplete-actores',
@@ -43,6 +44,12 @@ export class AutocompleteActoresComponent implements OnInit {
   deleteActor(element: any){
     const actorIndex = this.selectedActors.findIndex(a => a.nombre === element.nombre);
     this.selectedActors.splice(actorIndex,1);
+    this.actorTable.renderRows();
+  }
+
+  endDrop(event: CdkDragDrop<any[]>){
+    const previewsIndex = this.selectedActors.findIndex(a => a === event.item.data);
+    moveItemInArray(this.selectedActors,previewsIndex,event.currentIndex);
     this.actorTable.renderRows();
   }
 
